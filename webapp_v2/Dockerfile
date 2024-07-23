@@ -1,5 +1,5 @@
 # Use the official Python image
-FROM python:3.9-slim
+FROM python:3.12.4
 
 # Set the working directory
 WORKDIR /app
@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copy the rest of the application code
-COPY app.py .
+COPY . .
 
 # Expose the port the app runs on
 EXPOSE 5000
