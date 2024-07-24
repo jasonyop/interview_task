@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: webapp:v2
+        image: json7788/webapp:v2
         resources:
           limits:
             memory: "128Mi"
