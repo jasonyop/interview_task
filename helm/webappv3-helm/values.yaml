@@ -8,7 +8,7 @@ image:
   repository: json7788/webapp
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v2"
+  tag: "v3"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -27,6 +27,13 @@ securityContext: {}
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
+
+secret:
+  mysql_rootpassword: rootpassword
+  mysql_database: logs_db
+  mysql_user: user
+  mysql_password: password
+  db_host: mysql
 
 service:
   type: ClusterIP
@@ -85,10 +92,6 @@ autoscaling:
 
 # Additional volumes on the output Deployment definition.
 volumes: []
-# - name: foo
-#   secret:
-#     secretName: mysecret
-#     optional: false
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts: []

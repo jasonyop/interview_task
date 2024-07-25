@@ -1,16 +1,17 @@
-version: '3.8'
-
 services:
   web:
-    image: json7788/webapp:v3
-    container_name: web_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: webapp:v3
+    container_name: webapp
     ports:
       - "5000:5000"
     depends_on:
       - mysql
 
   mysql:
-    image: json7788/mysql:latest
+    image: mysql:latest
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
