@@ -2,9 +2,7 @@ version: '3.8'
 
 services:
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: json7788/webapp:v3
     container_name: web_app
     ports:
       - "5000:5000"
@@ -12,7 +10,7 @@ services:
       - mysql
 
   mysql:
-    image: mysql:latest
+    image: json7788/mysql:latest
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
